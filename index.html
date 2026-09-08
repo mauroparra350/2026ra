@@ -34,7 +34,8 @@
     <!-- 3. Carga previa de recursos (Assets) -->
     <a-assets>
       <!-- Cambia 'mi_objeto.glb' por la ruta de tu archivo GLB -->
-      <a-asset-item id="modelo3d" src="roca.glb"></a-asset-item>
+      <a-asset-item id="roca" src="roca.glb"></a-asset-item>
+       <a-asset-item id="trofeo" src="trofeo.glb"></a-asset-item>
     </a-assets>
 
     <!-- 4. Fondo de la escena -->
@@ -47,12 +48,17 @@
 
     <!-- 6. Modelo GLB configurado como enlace -->
     <a-gltf-model 
-      src="#modelo3d" 
+      src="#roca" 
       position="0 1.5 -3" 
       scale="1 1 1"
       enlace-click="url: otro.html">
     </a-gltf-model>
-
+ <a-gltf-model 
+      src="#trofeo" 
+      position="2 1.5 -3" 
+      scale="1 1 1"
+      enlace-click="url: otro.html">
+    </a-gltf-model>
   </a-scene>
 
 </body>
