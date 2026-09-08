@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Sitio VR - Modelo 3D Interactivo</title>
+
+  <!-- 1. Librería A-Frame -->
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
+  <!-- 2. Componente personalizado en JS para hacer clic en el modelo -->
+  <script>
+    AFRAME.registerComponent('enlace-click', {
+      schema: {
+        url: { type: 'string', default: '' }
+      },
+      init: function () {
+        var data = this.data;
+        var el = this.el;
+
+        // Escucha el evento de clic en la geometría 3D
+        el.addEventListener('click', function () {
+          if (data.url) {
+            window.location.href = data.url;
+          }
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <a-scene>
+    <!-- 3. Carga previa de recursos (Assets) -->
+    <a-assets>
+      <!-- Cambia 'mi_objeto.glb' por la ruta de tu archivo GLB -->
+      <a-asset-item id="modelo3d" src="roca.glb"></a-asset-item>
+    </a-assets>
+
+    <!-- 4. Fondo de la escena -->
+    <a-sky color="#ECECF4"></a-sky>
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+    <!-- 5. Cámara con cursor para registrar el clic sobre objetos 3D -->
+    <a-camera>
+      <a-cursor color="#FF5722"></a-cursor>
+    </a-camera>
+
+    <!-- 6. Modelo GLB configurado como enlace -->
+    <a-gltf-model 
+      src="#modelo3d" 
+      position="0 1.5 -3" 
+      scale="1 1 1"
+      enlace-click="url: https://yahoo.com">
+    </a-gltf-model>
+
+  </a-scene>
+
+</body>
+</html>
