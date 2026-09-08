@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <!-- Cámara -->
+    <a-camera position="0 1.6 3"></a-camera>
+
+    <!-- Plano con imagen transparente -->
+    <a-plane
+      position="0 1.5 -2"
+      width="2"
+      height="2"
+      material="src: #miImagen; transparent: true; side: double; alphaTest: 0.5">
+    </a-plane>
+
+    <!-- Definir el asset de la imagen -->
+    <a-assets>
+      <img id="miImagen" src="botellatransp.png" crossorigin="anonymous">
+    </a-assets>
+
+    <!-- Fondo de referencia -->
+    <a-sky color="#87CEEB"></a-sky>
+  </a-scene>
+</body>
+</html>
