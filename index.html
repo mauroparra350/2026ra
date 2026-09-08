@@ -35,8 +35,16 @@
     <a-assets>
       <!-- Cambia 'mi_objeto.glb' por la ruta de tu archivo GLB -->
       <a-asset-item id="roca" src="roca.glb"></a-asset-item>
-       <a-asset-item id="trofeo" src="trofeo.glb"></a-asset-item>
+      <a-asset-item id="trofeo" src="trofeo.glb"></a-asset-item>
+
     </a-assets>
+
+      <a-assets>
+      <!-- Cambia 'mi_objeto.glb' por la ruta de tu archivo GLB -->
+      <a-asset-item id="trofeo" src="trofeo.glb"></a-asset-item>
+    </a-assets>
+
+    
 
     <!-- 4. Fondo de la escena -->
     <a-sky color="#ECECF4"></a-sky>
@@ -53,12 +61,14 @@
       scale="1 1 1"
       enlace-click="url: otro.html">
     </a-gltf-model>
- <a-gltf-model 
+
+      <a-gltf-modelo 
       src="#trofeo" 
-      position="2 1.5 -3" 
+      position="0.10 1.5 -2" 
       scale="1 1 1"
       enlace-click="url: otro.html">
     </a-gltf-model>
+
   </a-scene>
 
 </body>
